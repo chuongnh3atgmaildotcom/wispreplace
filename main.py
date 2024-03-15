@@ -27,6 +27,7 @@ pd.set_option('display.max_colwidth', None)
 tmkw_df = pd.read_csv(tmkw)  # File with short and long keywords
 spkw_df = pd.read_csv(spkw)  # File with SPORT's short and long keywords
 # input_df = pd.read_csv(input, encoding='windows-1252')  # File with the Title column
+# input_df = pd.read_csv(input, encoding='cp1252')  # File with the Title column
 input_df = pd.read_csv(input)  # File with the Title column
 # print(input_df["Title"])
 # s_dropped = input_df[['Title']].dropna().sort_values(by="Title")
@@ -77,7 +78,7 @@ print('RESULT:')
 print(res)
 print(res.shape[0])
 # tag_dropped = input_df['Tags'].dropna().drop_duplicates().sort_values()
-tags = 'crs|pln|planner|pjs|hdjk|hdj|cld|calendar|slws|ear|2d|3d|osbh|hsw|tumb|tumb2|mug|dns|swt|cdg|crcs|scr|flcr|pjm|spjm|jrs|slcs|bjk|caror|car|crm|crmt|awb|pcs|psk|tb|wpz|hoodie|pjk|spj|spv|hpv|sjk|sas|short|knst|sjlg|canvas|drm|hdlj|hdlg|cplg|ttlg|bfj|hw|zaw|jns|jean|dpb|tsbb|ohzs|hzs|flag|tst|wtc|clkk|swk|llap|msb|ltc|cdl|bblk|ljk|ltv|splk|premium|sun|yard|blkt|cts|hlts|fm|hdrs|jumpsuit|mrb|totebag|bed|cms|csc|gls|pl'
+tags = 'crs|pln|planner|pjs|sps|hdjk|hdj|cld|calendar|slws|ear|2d|3d|osbh|hsw|tumb|tumb2|mug|dns|swt|cdg|crcs|scr|flcr|pjm|spjm|jrs|slcs|bjk|caror|car|crm|crmt|awb|pcs|psk|tb|wpz|hoodie|pjk|spj|spv|hpv|sjk|sas|short|knst|sjlg|canvas|drm|hdlj|hdlg|cplg|ttlg|bfj|hw|zaw|jns|jean|dpb|tsbb|ohzs|hzs|flag|tst|wtc|clkk|swk|llap|msb|ltc|cdl|bblk|ljk|ltv|splk|premium|sun|yard|blkt|cts|hlts|fm|hdrs|jumpsuit|mrb|totebag|tote|lpb|bed|jrb|cms|csc|gls|pl|kmn|ff'
 new_tags = input_df[~input_df['Tags'].str.contains(tags, case=False, na=False)]
 # print('debug:')
 # print(input_df[~input_df['Tags'].str.contains('crs|pln|planner|pjs|hdjk|hdj|cld|slws', case=False, na=False)]
